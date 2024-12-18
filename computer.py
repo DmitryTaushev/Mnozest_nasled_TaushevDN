@@ -67,7 +67,7 @@ class VideoCard:
         return self.vc_memory
 
 
-class Computer(PowerUnit,Motherboard, CPU,RAM,SSD,VideoCard):
+class Computer(PowerUnit,Motherboard,CPU,RAM,SSD,VideoCard):
     def __init__(self,power,chipset, cloak_freq,core_num,memory,frequency,ssd_memory,model,vc_memory):
         PowerUnit.__init__(self,power)
         Motherboard.__init__(self,chipset,power)
