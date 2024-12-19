@@ -6,11 +6,11 @@ class PowerUnit:
 
     def power_need(self):
         if self.power < 400:
-           print(f'Недостаточно напряжения {self.power} Bт')
+            return f'Недостаточно напряжения {self.power} Bт'
         elif self.power >1000:
-           print(f"Переизбыток напряжения {self.power} Bт")
+           return f"Переизбыток напряжения {self.power} Bт"
         elif ((self.power >= 400) and (self.power <= 1000)):
-            print(f"Достаточно напряжения {self.power} Bт")
+            return f"Достаточно напряжения {self.power} Bт"
 
 class Motherboard:
     def __init__(self,chipset,power):
@@ -20,7 +20,7 @@ class Motherboard:
     def power_separate(self):
         cpu_power = (self.power*40)/100
         video_power = (self.power*60)/100
-        return print(f"{cpu_power} Вт ушло на питание процессора, {video_power} Вт ушло на питание видео карты")
+        return f"{cpu_power} Вт ушло на питание процессора, {video_power} Вт ушло на питание видео карты"
 
 class CPU:
     def __init__(self,cloak_freq,core_num):
@@ -29,9 +29,9 @@ class CPU:
 
     def turboboost(self,mode):
         if mode == "ON":
-            print("Турбо режим включен")
+            return "Турбо режим включен"
         elif mode == "OFF":
-            print("Турбо режим выключен")
+            return "Турбо режим выключен"
 
     def get_cloak(self):
         return self.cloak_freq
@@ -47,7 +47,7 @@ class RAM:
 
     def RAM_work(self):
         time = self.memory/self.frequency
-        return print(f'Время записи информации {time}')
+        return f'Время записи информации {time}'
 
 class SSD:
     def __init__(self,ssd_memory):
@@ -55,7 +55,7 @@ class SSD:
 
     def memory_change(self,direct,inform):
         dict_inform = {direct:inform}
-        return print(f'Записанная информация {dict_inform}')
+        return f'Записанная информация {dict_inform}'
 
 class VideoCard:
     def __init__(self,model,vc_memory):
